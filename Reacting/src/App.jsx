@@ -146,9 +146,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, Routes, Route } from "react-router-dom";
-import Home1 from "./Components/Home1";
-import Show from "./Components/Show";
-import Services from "./Components/Services";
+import Home2 from "./Components/Home1";
+import About1 from "./Components/About1";
+import User1 from "./Components/User1";
+import UserDetails1 from "./Components/UserDetails1";
+
 const App = () => {
   // const addProducts = () => {
   //   const api = "https://fakestoreapi.com/products";
@@ -164,20 +166,37 @@ const App = () => {
   //     .catch((error) => console.log(error));
   // };
 
-  return (
-    <div className="pt-[5%] pl-[5%]">
-      <nav className="flex justify-center gap-10">
-        <Link to="/">Home</Link>
-        <Link to="/show">Show</Link>
-        <Link to="/services">Services</Link>
+  // return (
+  //   <div className="pt-[5%] pl-[5%]">
+  //     <nav className="flex justify-center gap-10">
+  //       <Link to="/">Home</Link>
+  //       <Link to="/show">Show</Link>
+  //       <Link to="/services">Services</Link>
+  //     </nav>
+  //     <hr />
+  //     <Routes>
+  //       <Route path="/" element={<Home1 />} />
+  //       <Route path="/show" element={<Show />} />
+  //       <Route path="/services" element={<Services />} />
+  //     </Routes>
+  //   </div>
+  // );
+
+  return(
+    <div className="p-1 w-1/2  m-auto">
+      <nav className="my-10 flex justify-center gap-10">
+        <Link to='/'>Home</Link>
+        <Link to='/user'>User</Link>
+        <Link to='/about'>About</Link>
       </nav>
-      <hr />
+
       <Routes>
-        <Route path="/" element={<Home1 />} />
-        <Route path="/show" element={<Show />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/" element = {<Home2/>}/>
+        <Route path="/user" element = {<User1/>}/>
+        <Route path="/user/:id" element = {<UserDetails1/>}/>
+        <Route path="/about" element = {<About1/>}/>
       </Routes>
     </div>
-  );
+  )
 };
 export default App;
